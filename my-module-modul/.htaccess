@@ -1,0 +1,4 @@
+<FilesMatch "\.(?:php|sql|ini)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
