@@ -3,13 +3,13 @@
 /* Här deklareras alla variabler */
 /* --------------------------------------------------------------------------------------------- */
 
-/* Colors */
+/* Colors $primary-color: #6E3282;*/
 $primary-color: #6E3282;
 $secondary-color: #3498db;
-$footer-color: #fff;
-$text-color: #333;
+$footer-color: #eee;
+$text-color: #000;
 $title-color: #6E3282;
-$link-color: #333;
+$link-color: #000;
 
 /* --------------------------------------------------------------------------------------------- */
 /* Media Queries */
@@ -169,15 +169,13 @@ body {
 	color: $text-color;
 	background-color: #fff;
 	@include font-smoothing(on);
-	@media (min-width: 800px){
-	background-color: #eee;
-}
+
 }
 
 /* Extra wide site */
-@media (min-width: 1500px){
+@media (min-width: 992px){
 	.container {
-	   width: 790px;
+	    width:900px;
 	}	
 }
 
@@ -193,11 +191,12 @@ table {
 
 /* Text */
 h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
+/*	font-weight: bold;*/
 	margin-bottom: 15px;
 	color: $title-color;
 	text-transform: uppercase;
-	border-bottom:10px solid #ccc;
+	letter-spacing: 1px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -290,11 +289,10 @@ hr {
 /* --------------------------------------------------------------------------------------------- */
 /* Margin and padding */
 /* --------------------------------------------------------------------------------------------- */
-
 #content-wrapper {
 	margin: 40px 0;
 	@media(min-width:768px){
-		margin: 10px 0;
+		margin: 20px 0;
 	}
 	&.type-page #content {
 		padding: 15px 0;
@@ -305,34 +303,10 @@ hr {
 	}
 }
 
-/*
 #container {
-	padding: 15px 15px;
-}
-*/
-
-@media (min-width: 1500px)
-.container {
-    width: 790px!important; 
+	padding: 0 15px;
 }
 
-@media (min-width: 1200px)
-.container {
-    width: 790px!important; 
-}
-
-@media (min-width: 992px)
-.container {
-    width: 790px!important; 
-}
-@media (min-width: 768px)
-.container {
-    width: 790px!important;
-}
-@media (min-width: 400px)
-.container {
-    width: 790px!important;
-}
 
 .entry-info{
 padding-top: 40px;	
@@ -632,17 +606,24 @@ padding-top: 40px;
 				border-bottom: none;
 			}
 			a{
+				@include transition(all 0.5s ease);
 				display: block;
 				margin-left:10px;				
 				font-weight: 400;
 				max-width: 80%;
 				height: 60px;
 				line-height: 60px;
+				text-transform: uppercase;
+				font-size: 12px;
+				letter-spacing: 1px;
 				@media(min-width:992px){
 					padding:0px 15px;
 					height: auto;
 					max-width: 100%;
 					margin-left: 0;
+				}
+				&:hover{
+			color:$primary-color;
 				}
 			}
 			&.parent{
@@ -894,21 +875,13 @@ padding-top: 40px;
 /* Startpage */
 /* --------------------------------------------------------------------------------------------- */
 
-.start-info{
+/*.start-info{
 	h1{
 		font-size: 30px;
 	}
 }
 
-.bg-wrapper{
-width: 100%;
-@media (min-width: 800px){
-	background: #fff;
-	width: 800px;
-	margin: auto;
-}}
-
-
+*/
 .gallery img.img-responsive{
 	    text-align: center;
     margin: auto;
@@ -928,9 +901,10 @@ width: 100%;
 /* --------------------------------------------------------------------------------------------- */
 
 #footer {
-	padding: 10px 0 0 0;
+	padding: 0px 0 0 0;
 	background-color: $footer-color;
 	text-align: center;
+	margin-top: 40px;
 	@media(min-width:768px){
 		padding: 10px 0;		
 	}
@@ -943,6 +917,7 @@ width: 100%;
 	}
 	h2, h3, h4, h5, p, li {
 		color: #333;
+		padding-bottom:10px;
 	}
 	a {
 		color: #333;
@@ -951,29 +926,42 @@ width: 100%;
 		margin-bottom: 20px;
 		line-height: 1.8;
 		font-size: 14px;
+		color: #000;
 	}
 	strong {
 		font-weight: 600;
 		letter-spacing: 1px;
 	}
 	ul li {
-		line-height: 1.8;
-		display: inline-block;
+		line-height: 1;
 		margin-right: 10px;
 	}
 	h4 {
 		margin-bottom: 20px;
+		color: $title-color;
 	}
 	.container{
-	/*border-top:10px solid #eee;*/
+
 	padding: 20px 0px;
+	}
+	img{
+		display: inline-block;
+		float: left;
+	vertical-align: baseline;
 	}
 }
 
 .footer-copyright{
 	text-align: center;
-	border-top:1px solid #eee;
+	border-top:1px solid #ccc;
+	background-color: $footer-color;
+		p {
+		margin: 10px;
+		line-height: 1.8;
+		font-size: 14px;
+	}
 }
+	
 /* --------------------------------------------------------------------------------------------- */
 /* News */
 /* --------------------------------------------------------------------------------------------- */
